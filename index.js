@@ -2,10 +2,10 @@
 const inquirer = require('inquirer');
 const jest = require('jest');
 const fs = require('fs');
-const Employee = require('./tests/Employee.test');
-const Engineer = require('./tests/Engineer.test');
-const Intern = require('./tests/Intern.test');
-const Manager = require('./tests/Manager.test');
+const Employee = require('./library/Employee');
+const Engineer = require('./library/Engineer');
+const Intern = require('./library/Intern');
+const Manager = require('./library/Manager');
 
 // Log out any necessities to check for errors in terminal
 console.log("Hi, I'm starting up my assignment.");
