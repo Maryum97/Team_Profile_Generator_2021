@@ -16,7 +16,12 @@
 - [Questions](#questions)
 
 ## Installation
-💾 In order to install this app, the user must have access to all the necessary software applications and modules installed/created on their machines, including the following: - Node.js - package.json - fs - inquirer - All files in './library' directory. 
+💾 In order to install this app, the user must have access to all the necessary software applications and modules installed/created on their machines, including the following: 
+- Node.js 
+- package.json 
+- fs 
+- inquirer 
+- All files in the './library' directory. 
 
 ## Instructions
 ⚙️ After installing/creating all the necessary modules, the user must start the application by opening the local terminal and typing "node index.js". Then, the user will be prompted with a series of prompts, to which the user must respond appropriately...
