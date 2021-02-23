@@ -17,7 +17,7 @@ const employees = [];
 
 // DECLARE FUNCTIONS BELOW:
 
-// Declare funtion to initiate the application and add employees to the app page
+// Declare funtion to initialise the application and add employees to the app page
 function initialiseApp () {
     // Call function to start the HTML page
     startHTML();
