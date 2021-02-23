@@ -9,7 +9,7 @@ const Manager = require('./library/Manager');
 
 // Log out any necessities to check for errors in terminal
 console.log("Hi, I'm starting up my assignment.");
-console.log(typeof inquirer, typeof jest, typeof fs);
+console.log(typeof(inquirer), typeof(jest), typeof(fs));
 console.log(typeof Employee, typeof Engineer, typeof Intern, typeof Manager);
 
 // Define array for all employees working in the team
