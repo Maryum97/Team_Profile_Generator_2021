@@ -105,7 +105,7 @@ function addEmployee() {
 
 // Declare function to create HTML page
 function startHTML() {
-    const HTML = `<!DOCTYPE html>
+    const html = `<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -141,7 +141,7 @@ function startHTML() {
 
             <div class="row">`;
 
-    fs.writeFile("./result-HTML/my-team.html", html, function(err) {
+    fs.writeFile("./result-HTML/my-team.html", html, function (err) {
         if (err) {
             console.log(err);
         }
@@ -151,12 +151,34 @@ function startHTML() {
 }
 
 // Declare function to append content to HTML page
-function addHTML() {
+function addHTML(teamMember) {
+    return new Promise(function (resolve, result) {
+        const name = teamMember.getName();
+        const role = teamMember.getRole();
+        const id = teamMember.getId();
+        const email = teamMember.getEmail();
 
+        // Define the information for each employee type, to append as a card in the HTML page
+        // let infoCard = "";
+    })
 }
 
 // Declare function to add finishing touches to HTML page, including error logging
 function endHTML() {
+    const html = `</div>
+
+    </div>
+
+</body>
+
+</html>`;
+
+    fs.appendFile("./result-HTML/my-team.html", html, function (err) {
+        if (err) {
+            console.log(err);
+        }
+    })
+    console.log("end");
 
 }
 
