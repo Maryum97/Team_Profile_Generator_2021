@@ -2,7 +2,7 @@
 <h1 style="align: center;">Team Profile Generator 👋</h1>
 
 ## Description
-🔍 This repository contains the application designed for generating a HTML webpage for an organisation that wishes to keep record of all their employees#, hence, the name "Team Profile Generator". This application uses Node.js to add team members and thier information to the organisation webpage, to appear in the browser. The owner of this application may add as many team members onto the webpage as they desire, depending on how many employees work at the organisation, including managers, engineers, and interns. This application makes it very convenient for team managers and organisers to keep track of all the members in their team, along with their credentials and other necessary information.
+🔍 This repository contains the application designed for generating a HTML webpage for an organisation that wishes to keep record of all their employees, hence, the name "Team Profile Generator". This application uses Node.js to add team members and thier information to the organisation webpage, to appear in the browser. The owner of this application may add as many team members onto the webpage as they desire, depending on how many employees work at the organisation, including managers, engineers, and interns. This application makes it very convenient for team managers and organisers to keep track of all the members in their team, along with their credentials and other necessary information.
 
 ## Table of Contents
 - [Description](#description)
