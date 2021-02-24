@@ -1,19 +1,17 @@
 // Define all the packages and modules required for this application
 const inquirer = require('inquirer');
-const jest = require('jest');
 const fs = require('fs');
 const Engineer = require('./library/Engineer');
 const Intern = require('./library/Intern');
 const Manager = require('./library/Manager');
-const { rejects } = require('assert');
 
 // Define array for all employees working in the team
 const employees = [];
 
 // DECLARE FUNCTIONS BELOW:
 
-// Declare funtion to initialise the application and add employees to the app page
-function initialiseApp() {
+// Declare funtion to initiate the application and add employees to the app page
+function initiateApp() {
     // Call function to start the HTML page
     startHTML();
     // Call funtion to add employees to the page
@@ -93,11 +91,12 @@ function addEmployee() {
 
             // Add new member into the employees array and to HTML
             employees.push(newMember);
-            addHtml(newMember).then(function () {
-                if (moreMembers === "yes") {
-                    addMember();
-                } else {
-                    endHtml();
+            addHTML(newMember).then(function () {
+                if (addMembers === "yes") {
+                    addEmployee();
+                }
+                else {
+                    endHTML();
                 }
             })
         })
@@ -116,8 +115,10 @@ function startHTML() {
         <!-- CSS only, from Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- CSS only, from Font Awesome -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
         <title>Team Profile Generator</title>
-    
     </head>
     
     <body>
@@ -139,7 +140,7 @@ function startHTML() {
     
         <!-- Container for body here -->
         <div class="container">
-
+    
             <div class="row">`;
 
     fs.writeFile("./result-HTML/my-team.html", html, function (err) {
@@ -164,18 +165,72 @@ function addHTML(teamMember) {
 
         if (role === "Engineer") {
             const github = teamMember.getGithub();
-            infoCard = ``;
+            infoCard = `<div class="col-4">
+
+                <!-- Card here -->
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center text-light bg-primary py-4">${name}<br>
+                            <span>
+                                <h3><i class="fas fa-glasses-alt"></i> Engineer</h3>
+                            </span>
+                        </h2>
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: ${id}</li>
+                            <li class="list-group-item">Email Address: ${email}</li>
+                            <li class="list-group-item">GitHub: ${github}</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>`;
         }
 
         else if (role === "Intern") {
             const school = teamMember.getSchoolName();
-            infoCard = ``;
+            infoCard = `<div class="col-4">
+
+            <!-- Card here -->
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-light bg-primary py-4">${name}<br>
+                        <span>
+                            <h3><i class="fas fa-user-hard-hat"></i> Intern</h3>
+                        </span>
+                    </h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">ID: ${id}</li>
+                        <li class="list-group-item">Email Address: ${email}</li>
+                        <li class="list-group-item">School: ${school}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>`;
 
         }
 
         else if (role === "Manager") {
             const office = teamMember.getOfficeNum();
-            infoCard = ``;
+            infoCard = ` <div class="col-4">
+
+            <!-- Card here -->
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-light bg-primary py-4">${name}<br>
+                        <span>
+                            <h3><i class="fad fa-mug-hot"></i> Manager</h3>
+                        </span>
+                    </h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">ID: ${id}</li>
+                        <li class="list-group-item">Email Address: ${email}</li>
+                        <li class="list-group-item">Office Number: ${office}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>`;
         }
 
         console.log("adding team member");
@@ -208,5 +263,5 @@ function endHTML() {
 
 }
 
-// Call function to initialise app
-initialiseApp();
+// Call function to initiate app
+initiateApp();
