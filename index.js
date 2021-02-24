@@ -5,6 +5,7 @@ const fs = require('fs');
 const Engineer = require('./library/Engineer');
 const Intern = require('./library/Intern');
 const Manager = require('./library/Manager');
+const { rejects } = require('assert');
 
 // Define array for all employees working in the team
 const employees = [];
@@ -152,14 +153,39 @@ function startHTML() {
 
 // Declare function to append content to HTML page
 function addHTML(teamMember) {
-    return new Promise(function (resolve, result) {
+    return new Promise(function (resolve, reject) {
         const name = teamMember.getName();
         const role = teamMember.getRole();
         const id = teamMember.getId();
         const email = teamMember.getEmail();
 
         // Define the information for each employee type, to append as a card in the HTML page
-        // let infoCard = "";
+        let infoCard = "";
+
+        if (role === "Engineer") {
+            const github = teamMember.getGithub();
+            infoCard = ``;
+        }
+
+        else if (role === "Intern") {
+            const school = teamMember.getSchoolName();
+            infoCard = ``;
+
+        }
+
+        else if (role === "Manager") {
+            const office = teamMember.getOfficeNum();
+            infoCard = ``;
+        }
+
+        console.log("adding team member");
+        fs.appendFile("./result-HTML/my-team.html", infoCard, function (err) {
+            if (err) {
+                return reject(err);
+            }
+
+            return resolve();
+        })
     })
 }
 
