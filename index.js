@@ -96,24 +96,24 @@ function addEmployee() {
                 if (moreMembers === "yes") {
                     addMember();
                 } else {
-                    finishHtml();
+                    endHtml();
                 }
             })
         })
     })
 }
 
-// Declare function to start rendering of the HTML page
+// Declare function to create HTML page
 function startHTML() {
 
 }
 
-// Declare function to add HTML content to the page
+// Declare function to append content to HTML page
 function addHTML() {
 
 }
 
-// Declare function to end HTML rendering
+// Declare function to add finishing touches to HTML page, including error logging
 function endHTML() {
 
 }
