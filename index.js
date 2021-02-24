@@ -66,15 +66,12 @@ function addEmployee() {
         else if (role === "Manager") {
             roleInformation = "office phone number";
         }
-        console.log(roleInformation);
-
-        var rolePrompt = `Enter the team member's ${roleInformation}:`
         
         // Continue prompting questions in terminal
         inquirer.prompt([
             {
                 // Prompt for employee role
-                message: rolePrompt,
+                message: `Enter the team member's ${roleInformation}:`,
                 name: "roleInformation"
             },
             {
@@ -84,7 +81,24 @@ function addEmployee() {
                 name: "addMembers",
                 choices: ["Yes", "No"]
             }
-        ])
+        ]).then(function ({roleInformation, addMembers}) {
+
+            // Role is different, therefore, role information being different also applies to new employees,
+            // Depending on their role
+            var newMember = "";
+            if (role === "Engineer") {
+                newMember = new Engineer(name, id, email, roleInformation);
+            }
+            else if (role === "Intern") {
+                newMember = new Intern(name, id, email, roleInformation);
+            }
+            else if (role === "Manager") {
+                newMember = new Manager(name, id, email, roleInformation);
+            }
+
+            // Add new member into the employees array
+            employees.push(newMember);
+        })
     })
 }
 
