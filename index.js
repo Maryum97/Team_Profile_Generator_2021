@@ -105,6 +105,48 @@ function addEmployee() {
 
 // Declare function to create HTML page
 function startHTML() {
+    const HTML = `<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only, from Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <title>Team Profile Generator</title>
+    
+    </head>
+    
+    <body>
+    
+        <!-- Navbar here -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <div class="container-fluid">
+                <div class="container py-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="bg-danger">
+                                <h1 class="text-center text-white">My Team</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Container for body here -->
+        <div class="container">
+
+            <div class="row">`;
+
+    fs.writeFile("./result-HTML/my-team.html", html, function(err) {
+        if (err) {
+            console.log(err);
+        }
+    })
+    console.log("start");
 
 }
 
