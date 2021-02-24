@@ -38,12 +38,12 @@ function addEmployee() {
         {
             // Prompt for employee id
             message: "Enter the team member's ID:",
-            name: "ID"
+            name: "id"
         },
         {
             // Prompt for employee email
             message: "Enter the team member's E-mail address:",
-            name: "e-mail"
+            name: "email"
         }
     ]).then(function ({ name, role, id, email }) {
 
@@ -92,7 +92,7 @@ function addEmployee() {
             // Add new member into the employees array and to HTML
             employees.push(newMember);
             addHTML(newMember).then(function () {
-                if (addMembers === "yes") {
+                if (addMembers === "Yes") {
                     addEmployee();
                 }
                 else {
@@ -178,7 +178,7 @@ function addHTML(teamMember) {
                         <ul class="list-group">
                             <li class="list-group-item">ID: ${id}</li>
                             <li class="list-group-item">Email Address: ${email}</li>
-                            <li class="list-group-item">GitHub: ${github}</li>
+                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
                         </ul>
                     </div>
                 </div>
