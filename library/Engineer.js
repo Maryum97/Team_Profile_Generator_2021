@@ -6,10 +6,10 @@ const Employee = require("./Employee");
 class Engineer extends Employee {
     constructor(name, id, email, github) {
 
-        // Calling methods defined in parent object (Employee)
-        super(name, id, email)
+        // Calling properties defined in parent object (Employee)
+        super(name, id, email);
 
-        // Defining new method --> first test
+        // Defining new property --> first test
         this.github = github;
     }
 
