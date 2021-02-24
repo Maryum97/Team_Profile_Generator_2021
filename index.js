@@ -2,15 +2,9 @@
 const inquirer = require('inquirer');
 const jest = require('jest');
 const fs = require('fs');
-const Employee = require('./library/Employee');
 const Engineer = require('./library/Engineer');
 const Intern = require('./library/Intern');
 const Manager = require('./library/Manager');
-
-// Log out any necessities to check for errors in terminal
-console.log("Hi, I'm starting up my assignment.");
-console.log(typeof(inquirer), typeof(jest), typeof(fs));
-console.log(typeof(Employee), typeof(Engineer), typeof(Intern), typeof (Manager));
 
 // Define array for all employees working in the team
 const employees = [];
@@ -52,7 +46,7 @@ function addEmployee() {
             message: "Enter the team member's E-mail address:",
             name: "e-mail"
         }
-    ]).then(function ({name, role, id, email}) {
+    ]).then(function ({ name, role, id, email }) {
 
         // Role is different, therefore, role information is differnt
         // Define different role information for each role (Engineer, Intern, or Manager)
@@ -66,7 +60,7 @@ function addEmployee() {
         else if (role === "Manager") {
             roleInformation = "office phone number";
         }
-        
+
         // Continue prompting questions in terminal
         inquirer.prompt([
             {
@@ -81,7 +75,7 @@ function addEmployee() {
                 name: "addMembers",
                 choices: ["Yes", "No"]
             }
-        ]).then(function ({roleInformation, addMembers}) {
+        ]).then(function ({ roleInformation, addMembers }) {
 
             // Role is different, therefore, role information being different also applies to new employees,
             // Depending on their role
@@ -96,8 +90,15 @@ function addEmployee() {
                 newMember = new Manager(name, id, email, roleInformation);
             }
 
-            // Add new member into the employees array
+            // Add new member into the employees array and to HTML
             employees.push(newMember);
+            addHtml(newMember).then(function () {
+                if (moreMembers === "yes") {
+                    addMember();
+                } else {
+                    finishHtml();
+                }
+            })
         })
     })
 }
