@@ -9,8 +9,8 @@ const Manager = require('./library/Manager');
 
 // Log out any necessities to check for errors in terminal
 console.log("Hi, I'm starting up my assignment.");
-console.log(typeof (inquirer), typeof (jest), typeof (fs));
-console.log(typeof Employee, typeof Engineer, typeof Intern, typeof Manager);
+console.log(typeof(inquirer), typeof(jest), typeof(fs));
+console.log(typeof(Employee), typeof(Engineer), typeof(Intern), typeof (Manager));
 
 // Define array for all employees working in the team
 const employees = [];
@@ -27,6 +27,8 @@ function initialiseApp() {
 
 // Declare function to add employees to the array
 function addEmployee() {
+
+    // Prompt questions to user in terminal for the name, id and email of the employee
     inquirer.prompt([
         {
             // Propmpt for employee name
@@ -41,17 +43,48 @@ function addEmployee() {
             choices: ["Engineer", "Intern", "Manager"]
         },
         {
-            // Prompt for employee ID
-            message: "Enter the ID of the team member:",
+            // Prompt for employee id
+            message: "Enter the team member's ID:",
             name: "ID"
         },
         {
-            // Prompt for employee e-mail
-            message: "Enter the e-mail address of the team member:",
+            // Prompt for employee email
+            message: "Enter the team member's E-mail address:",
             name: "e-mail"
         }
-    ]).then(function(name, role, id, email) {
+    ]).then(function ({name, role, id, email}) {
 
+        // Role is different, therefore, role information is differnt
+        // Define different role information for each role (Engineer, Intern, or Manager)
+        var roleInformation = "";
+        if (role === "Engineer") {
+            roleInformation = "Github username";
+        }
+        else if (role === "Intern") {
+            roleInformation = "school name";
+        }
+        else if (role === "Manager") {
+            roleInformation = "office phone number";
+        }
+        console.log(roleInformation);
+
+        var rolePrompt = `Enter the team member's ${roleInformation}:`
+        
+        // Continue prompting questions in terminal
+        inquirer.prompt([
+            {
+                // Prompt for employee role
+                message: rolePrompt,
+                name: "roleInformation"
+            },
+            {
+                // Prompt for adding more employees
+                type: "list",
+                message: "Would you like to add more team members?",
+                name: "addMembers",
+                choices: ["Yes", "No"]
+            }
+        ])
     })
 }
 
