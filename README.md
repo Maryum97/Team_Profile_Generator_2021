@@ -53,11 +53,12 @@ The special advantage of using this app is that it allows the team organiser or 
 This application is covered by the MIT License. 
 
 ## Contributing
-👪 I you would like to contribute to my code in this repository, contact me using the contact information below, whereby I may be able to provide you with access to my code, by allowing you to create branches and push any changes that I may merge!
+👪 If you would like to contribute to my code in this repository, contact me using the contact information below, whereby I may be able to provide you with access to my code, by allowing you to create branches and push any changes that I may merge!
 
 ## Tests
-✏️ NA
-Installations --> jest...explain how to pass the tests and make sure the code is error free; tests in the tests folder
+✏️ I have used the following procedure to test and validate my code:
+
+###Installations --> jest...explain how to pass the tests and make sure the code is error free; tests in the tests folder
 
 ## Credits
 💐 I would like to credit the following sources for helping me finish my assignment:
