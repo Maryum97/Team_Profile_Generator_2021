@@ -7,7 +7,6 @@ const Manager = require('./library/Manager');
 
 // Define array for all employees working in the team
 const employees = [];
-const myArray = ["Engineer", "Intern"];
 
 // DECLARE FUNCTIONS BELOW:
 
@@ -23,15 +22,20 @@ function initiateApp() {
 function addEmployee() {
 
     // Define function for if a manager already exists in the array
+
+    const myArray = ["Engineer", "Intern"];
+
     const managerExists = async (response) => {
         if (response !== "Manager") {
             return true;
         }
-        for (var i = 0; i < employees.length; i++) {
-            if (employees[i].role == "Manager") {
-                found = true;
-                console.log("returning error");
-                return "There is already one manager in the team.";
+        else {
+            for (var i = 0; i < employees.length; i++) {
+                if (employees[i].role == "Manager") {
+                    found = true;
+                    console.log("returning error");
+                    return "There is already one manager in the team.";
+                }
             }
         }
     }
