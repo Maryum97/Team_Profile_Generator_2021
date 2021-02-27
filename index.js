@@ -21,29 +21,6 @@ function initiateApp() {
 // Declare function to add employees to the array
 function addEmployee() {
 
-    // Define function for if a manager already exists in the array
-
-    const myArray = ["Engineer", "Intern"];
-
-    const managerExists = async (response) => {
-        if (response !== "Manager") {
-            return true;
-        }
-        else {
-            for (var i = 0; i < employees.length; i++) {
-                if (employees[i].role == "Manager") {
-                    found = true;
-                    console.log("returning error");
-                    return "There is already one manager in the team.";
-                }
-            }
-        }
-    }
-
-    if (managerExists()) {
-        myArray.push("Manager");
-    }
-
     // Prompt questions to user in terminal for the name, id and email of the employee
     inquirer.prompt([
         {
@@ -56,7 +33,7 @@ function addEmployee() {
             type: "list",
             message: "Select the team member's role:",
             name: "role",
-            choices: myArray
+            choices: ["Manager", "Engineer", "Intern"]
         },
         {
             // Prompt for employee id
