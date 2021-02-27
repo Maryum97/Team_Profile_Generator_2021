@@ -22,12 +22,14 @@ function initiateApp() {
 function addEmployee() {
 
     // Define function for if a manager already exists in the array
-    const managerExists = async (found) => {
-        found = "false";
+    const managerExists = async (response) => {
+        if (response !== "Manager") {
+            return true;
+        }
         for (var i = 0; i < employees.length; i++) {
             if (employees[i].role == "Manager") {
                 found = true;
-                break;
+                return "There is already one manager in the team."
             }
         }
     }
