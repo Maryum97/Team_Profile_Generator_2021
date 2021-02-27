@@ -166,7 +166,6 @@ function addHTML(teamMember) {
         if (role === "Engineer") {
             const github = teamMember.getGithub();
             infoCard = `<div class="col-4">
-
             <!-- Card here -->
             <div class="card">
                 <div class="card-body">
@@ -182,14 +181,12 @@ function addHTML(teamMember) {
                     </ul>
                 </div>
             </div>
-
             </div>`;
         }
 
         else if (role === "Intern") {
             const school = teamMember.getSchoolName();
             infoCard = `<div class="col-4">
-
             <!-- Card here -->
             <div class="card">
                 <div class="card-body">
@@ -205,7 +202,6 @@ function addHTML(teamMember) {
                     </ul>
                 </div>
             </div>
-
         </div>`;
 
         }
@@ -213,7 +209,6 @@ function addHTML(teamMember) {
         else if (role === "Manager") {
             const office = teamMember.getOfficeNum();
             infoCard = `<div class="col-4">
-
             <!-- Card here -->
             <div class="card">
                 <div class="card-body">
@@ -229,7 +224,6 @@ function addHTML(teamMember) {
                     </ul>
                 </div>
             </div>
-
         </div>`;
         }
 
@@ -247,11 +241,8 @@ function addHTML(teamMember) {
 // Declare function to add finishing touches to HTML page, including error logging
 function endHTML() {
     const html = `</div>
-
     </div>
-
 </body>
-
 </html>`;
 
     fs.appendFile("./result-HTML/my-team.html", html, function (err) {
