@@ -1,5 +1,5 @@
 // Define the module required
-const Engineer = require('./library/Engineer');
+const Engineer = require('../library/Engineer');
 
 // Define the test functions to:
 

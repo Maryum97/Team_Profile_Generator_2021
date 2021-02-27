@@ -167,21 +167,21 @@ function addHTML(teamMember) {
             const github = teamMember.getGithub();
             infoCard = `<div class="col-4">
 
-                <!-- Card here -->
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title text-center text-light bg-primary py-4">${name}<br>
-                            <span>
-                                <h3><i class="fas fa-glasses-alt"></i> Engineer</h3>
-                            </span>
-                        </h2>
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email Address: ${email}</li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
-                        </ul>
-                    </div>
+            <!-- Card here -->
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-light bg-primary py-4">${name}<br>
+                        <span>
+                            <h3><i class="fas fa-glasses-alt"></i> Engineer</h3>
+                        </span>
+                    </h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">ID: ${id}</li>
+                        <li class="list-group-item">Email Address: <a href="mailto:${email}">${email}</a></li>
+                        <li class="list-group-item">GitHub: <a href="https://github.com/${github}" target="_blank">${github}</a></li>
+                    </ul>
                 </div>
+            </div>
 
             </div>`;
         }
@@ -200,7 +200,7 @@ function addHTML(teamMember) {
                     </h2>
                     <ul class="list-group">
                         <li class="list-group-item">ID: ${id}</li>
-                        <li class="list-group-item">Email Address: ${email}</li>
+                        <li class="list-group-item">Email Address: <a href="mailto:${email}">${email}</a></li>
                         <li class="list-group-item">School: ${school}</li>
                     </ul>
                 </div>
@@ -212,7 +212,7 @@ function addHTML(teamMember) {
 
         else if (role === "Manager") {
             const office = teamMember.getOfficeNum();
-            infoCard = ` <div class="col-4">
+            infoCard = `<div class="col-4">
 
             <!-- Card here -->
             <div class="card">
@@ -224,7 +224,7 @@ function addHTML(teamMember) {
                     </h2>
                     <ul class="list-group">
                         <li class="list-group-item">ID: ${id}</li>
-                        <li class="list-group-item">Email Address: ${email}</li>
+                        <li class="list-group-item">Email Address: <a href="mailto:${email}">${email}</a></li>
                         <li class="list-group-item">Office Number: ${office}</li>
                     </ul>
                 </div>

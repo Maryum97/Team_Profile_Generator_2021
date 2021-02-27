@@ -1,5 +1,5 @@
 // Define the module required
-const Intern = require('./library/Intern');
+const Intern = require('../library/Intern');
 
 // Define the test functions to:
 

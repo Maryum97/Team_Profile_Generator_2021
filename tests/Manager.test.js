@@ -1,5 +1,5 @@
 // Define the module required
-const Manager = require('./library/Manager');
+const Manager = require('../library/Manager');
 
 // Define the test functions to:
 

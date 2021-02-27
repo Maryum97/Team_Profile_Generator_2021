@@ -1,5 +1,5 @@
 // Define the module required
-const Employee = require('./library/Employee');
+const Employee = require('../library/Employee');
 
 // Describe the function for the module
 describe("Employee", () => {
@@ -16,21 +16,21 @@ describe("Employee", () => {
     it("Sets name", () => {
         const name = "Test";
         const e = new Employee(name);
-        expect(typeof (e)).toBe(name);
+        expect(e.name).toBe(name);
     });
 
     // 2. ID
     it("Sets ID", () => {
         const testValue = 100;
         const e = new Employee("value", testValue);
-        expect(typeof (e)).toBe(testValue);
+        expect(e.id).toBe(testValue);
     });
 
     // 3. E-mail
     it("Sets e-mail", () => {
         const testValue = "test@test.com";
         const e = new Employee("value", 1, testValue);
-        expect(typeof (e)).toBe(testValue);
+        expect(e.email).toBe(testValue);
     });
 
     // Describe functions for getting the variables set earlier
@@ -40,7 +40,7 @@ describe("Employee", () => {
         it("Gets name via getName", () => {
             const testName = "Test";
             const e = new Employee(testName);
-            expect(typeof (e)).toBe(testName);
+            expect(e.getName()).toBe(testName);
         });
     });
 
@@ -49,7 +49,7 @@ describe("Employee", () => {
         it("Gets ID via getID", () => {
             const testValue = 100;
             const e = new Employee("value", testValue);
-            expect(typeof (e)).toBe(testValue);
+            expect(e.getId()).toBe(testValue);
         });
     });
 
@@ -58,7 +58,7 @@ describe("Employee", () => {
         it("", () => {
             const testValue = "test@test.com";
             const e = new Employee("value", 1, testValue);
-            expect(typeof (e)).toBe(testValue);
+            expect(e.getEmail()).toBe(testValue);
         });
     });
 
