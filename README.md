@@ -51,7 +51,7 @@ Another special feature about this app is that it allows the user to access the 
 ## Usage
 💻 Watch the video linked below:
 
-#video#
+<a href="https://drive.google.com/file/d/1XhgG4JhEBHYBUSZJLz_VLbaLh8cGIQZQ/view" target="_blank">My Demo Video for the Team Profile Generator App</a>
 
 ## License
 ![badge](https://img.shields.io/badge/license-MIT License-brightgreen)
