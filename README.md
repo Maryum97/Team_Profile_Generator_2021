@@ -38,9 +38,15 @@
     b. Github account, if engineer
     c. School name, if intern
 
+The demo gif below demostrates the formation of the html webpage once the user finishes answering appropriately to the prompts in the server:
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/73832871/109430502-abbc6400-79f9-11eb-9cd2-1011fa222160.gif)
+
 The special advantage of using this app is that it allows the team organiser or user to add as many team members as they wish, including if the team requires multiple managers. At the end, the team is displayed on a html page, an example of which is shown in the image below:
 
-#image#
+![Annotation 2021-02-28 171305](https://user-images.githubusercontent.com/73832871/109430499-a95a0a00-79f9-11eb-962b-792156ef6875.png)
+
+Another special feature about this app is that it allows the user to access the Github accounts and the email addresses of the team members, because they are included in the code as hyperlinks.
 
 ## Usage
 💻 Watch the video linked below:
@@ -58,7 +64,13 @@ This application is covered by the MIT License.
 ## Tests
 ✏️ I have used the following procedure to test and validate my code:
 
-###Installations --> jest...explain how to pass the tests and make sure the code is error free; tests in the tests folder
+- I created test files for each of the script (.js) files that I used to test my functions to make sure they passed
+- I installed jest in my local machine through Node.js, in order for Node to allow me to carry out the tests
+- I ran "npm run test" in Node and read all of my tests in the server as "passed"
+
+You may have a look at my test files in the "tests" directory of my repository. Each of them use the 'require()' method to call the actual js files respective to their names and functions. I have demonstrated the test running in my video, in the "Usage" section. Below is a gif demonstrating the tests being passed:
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/73832871/109430885-66993180-79fb-11eb-9f07-09d47044c8ab.gif)
 
 ## Credits
 💐 I would like to credit the following sources for helping me finish my assignment:
